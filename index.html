@@ -12,50 +12,63 @@
 
 	<link rel="stylesheet" type="text/css" href="css/screen.css">
 	<link href="../img/favicon.png" rel="shortcut icon">
+
+	<script type="text/template" id="movieDetailsTemplate">
+		<div class="view">
+			<div class="navbar">Xboom!</div>
+
+			<div class="banner">
+				<div class="title">{{title}}</div>
+			</div>
+
+			<div class="row row1">
+				<div class="cell cell1">
+					<div class="value">Comedy</div>
+					<div class="field">Genre</div>
+				</div>
+				<div class="cell cell2">
+					<div class="value">95</div>
+					<div class="field">Minutes</div>
+				</div>
+				<div class="cell cell3">
+					<div class="value">2010</div>
+					<div class="field">Year</div>
+				</div>
+			</div>
+
+			<div class="row row2">
+				<div class="cell cell1">
+					<div class="value">135</div>
+					<div class="field">Votes</div>
+				</div>
+				<div class="cell cell2">
+					<div class="value">7.5</div>
+					<div class="field">Rating</div>
+				</div>
+				<div class="cell cell3">
+					<div class="value">Plot</div>
+					<div class="field">Overview</div>
+				</div>
+			</div>
+
+			<div class="row row3">
+				<div class="cell cell1">T</div>
+				<div class="cell cell3">></div>
+			</div>
+
+		</div>
+	</script>
+
+
+	<script src="js/components/lodash/lodash.js"></script>
+	<script src="js/components/jquery/jquery.min.js"></script>
+	<script src="js/components/handlebars/handlebars.js"></script>
+
+	<script src="js/components/backbone/backbone-min.js"></script>
+
+	<script src="js/movieDetails.js"></script>
 </head>
 <body>
-	<div class="view">
-		<div class="navbar">Xboom!</div>
 
-		<div class="banner">
-			<div class="title">Despicable Me</div>
-		</div>
-
-		<div class="row row1">
-			<div class="cell cell1">
-				<div class="value">Comedy</div>
-				<div class="field">Genre</div>
-			</div>
-			<div class="cell cell2">
-				<div class="value">95</div>
-				<div class="field">Minutes</div>
-			</div>
-			<div class="cell cell3">
-				<div class="value">2010</div>
-				<div class="field">Year</div>
-			</div>
-		</div>
-
-		<div class="row row2">
-			<div class="cell cell1">
-				<div class="value">135</div>
-				<div class="field">Votes</div>
-			</div>
-			<div class="cell cell2">
-				<div class="value">7.5</div>
-				<div class="field">Rating</div>
-			</div>
-			<div class="cell cell3">
-				<div class="value">Plot</div>
-				<div class="field">Overview</div>
-			</div>
-		</div>
-
-		<div class="row row3">
-			<div class="cell cell1">T</div>
-			<div class="cell cell3">></div>
-		</div>
-
-	</div>
 </body>
 </html>
