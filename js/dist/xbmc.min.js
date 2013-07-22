@@ -38,7 +38,9 @@ xbmc.Sync = _.extend({
         this.listenTo(xbmc.WebSocket, 'all', this.onMessage);
     },
     onMessage: function(e, data) {
-        if (!data) { return false; }
+        if (!data) {
+            return false;
+        }
 
         if (data.id == 'libMovies') {
             this.syncMovies(data);
@@ -48,7 +50,21 @@ xbmc.Sync = _.extend({
         this.getMovies();
     },
     getMovies: function() {
-        xbmc.WebSocket.send('{"jsonrpc": "2.0", "method": "VideoLibrary.GetMovies", "params": { "filter": {"field": "playcount", "operator": "is", "value": "0"}, "limits": { "start" : 0, "end": 75 }, "properties" : ["art", "rating", "thumbnail", "playcount", "file", "genre"], "sort": { "order": "ascending", "method": "label", "ignorearticle": true } }, "id": "libMovies"}');
+        var request = {
+            "jsonrpc": "2.0",
+            "method": "VideoLibrary.GetMovies",
+            "params": {
+                "properties": ["art", "rating", "thumbnail", "playcount", "genre", "cast", "trailer", "year", "tagline", "runtime"],
+                "sort": {
+                    "order": "ascending",
+                    "method": "label",
+                    "ignorearticle": true
+                }
+            },
+            "id": "libMovies"
+        };
+
+        xbmc.WebSocket.send(JSON.stringify(request));
     },
     syncMovies: function(data) {
         var movies = data.result.movies;
@@ -63,18 +79,6 @@ xbmc.Sync = _.extend({
 
 // Start XBMC Sync
 xbmc.Sync.initialize();
-xbmc.WebSocket.on('socket:open', function() { xbmc.Sync.sync(); });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+xbmc.WebSocket.on('socket:open', function() {
+    xbmc.Sync.sync();
+});
