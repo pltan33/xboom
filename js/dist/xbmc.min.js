@@ -38,9 +38,7 @@ xbmc.Sync = _.extend({
         this.listenTo(xbmc.WebSocket, 'all', this.onMessage);
     },
     onMessage: function(e, data) {
-        if (!data) {
-            return false;
-        }
+        if (!data) { return false; }
 
         if (data.id == 'libMovies') {
             this.syncMovies(data);
@@ -50,10 +48,15 @@ xbmc.Sync = _.extend({
         this.getMovies();
     },
     getMovies: function() {
-        xbmc.WebSocket.send('{"jsonrpc": "2.0", "method": "VideoLibrary.GetMovies", "params": { "filter": {"field": "playcount", "operator": "is", "value": "0"}, "limits": { "start" : 0, "end": 75 }, "properties" : ["art", "rating", "thumbnail", "playcount", "file"], "sort": { "order": "ascending", "method": "label", "ignorearticle": true } }, "id": "libMovies"}');
+        xbmc.WebSocket.send('{"jsonrpc": "2.0", "method": "VideoLibrary.GetMovies", "params": { "filter": {"field": "playcount", "operator": "is", "value": "0"}, "limits": { "start" : 0, "end": 75 }, "properties" : ["art", "rating", "thumbnail", "playcount", "file", "genre"], "sort": { "order": "ascending", "method": "label", "ignorearticle": true } }, "id": "libMovies"}');
     },
     syncMovies: function(data) {
         var movies = data.result.movies;
+
+        _.forEach(movies, function(m) {
+            m.thumbnail = encodeURIComponent(m.thumbnail);
+        });
+
         localStorage.setItem(data.id, JSON.stringify(movies));
     }
 }, Backbone.Events);
@@ -61,3 +64,17 @@ xbmc.Sync = _.extend({
 // Start XBMC Sync
 xbmc.Sync.initialize();
 xbmc.WebSocket.on('socket:open', function() { xbmc.Sync.sync(); });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
