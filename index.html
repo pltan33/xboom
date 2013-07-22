@@ -83,8 +83,12 @@
 		    xbmc.WebSocket.connect({path: 'ws://ptmac:9090/jsonrpc'});
 
 		    // Create Views
-		    var movies = new xboom.Views.MovieList();
-		    $('body').append(movies.el);
+		    // var movies = new xboom.Views.MovieList();
+		    // $('body').append(movies.el);
+		    
+
+		    var settings = new xboom.Views.Settings();
+		    $('body').append(settings.el);
 		});
 	</script>
 </head>

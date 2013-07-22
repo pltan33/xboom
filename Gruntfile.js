@@ -4,12 +4,16 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON( 'package.json' ),
 
         watch: {
+            html: {
+                files: ['js/src/**/*.html'],
+                tasks: 'handlebars'
+            },
             scss: {
                 files: ['sass/**/*.scss'],
                 tasks: 'scss'
             },
             js: {
-                files: ['js/**/*.js'],
+                files: ['js/src/**/*.js'],
                 tasks: 'compile'
             },
             livereload: {
@@ -17,9 +21,10 @@ module.exports = function(grunt) {
                     livereload: true
                 },
                 files: [
-                  '**/*.html',
+                  // 'js/src/**/*.html',
+                  'index.html',
                   'css/{,*/}*.css',
-                  'js/{,*/}*.js'
+                  'js/dist/{,*/}*.js'
                 ]
             }
         },
@@ -51,18 +56,32 @@ module.exports = function(grunt) {
                     'css/screen.css': 'sass/screen.scss'
                 }
             }
+        },
+
+        handlebars: {
+            compile: {
+                options: {
+                    namespace: "XBOOMTemplates"
+                },
+                files: {
+                    "js/dist/templates.min.js": ["js/src/**/*.html"]
+                }
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-handlebars');
     grunt.loadNpmTasks('grunt-preprocess');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
 
     // Default task
-    grunt.registerTask('default', ['sass', 'compile']);
+    grunt.registerTask('default', ['sass', 'compile', 'handlebars']);
     grunt.registerTask('scss', ['sass']);
     grunt.registerTask('compile', ['preprocess']);
     grunt.registerTask('dev', ['connect', 'watch']);
 
 };
+
+
