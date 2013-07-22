@@ -1,0 +1,80 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+body {
+  background-color: #1c1d1e;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.view {
+  background-color: #ebebed;
+  height: 100%;
+  width: 320px;
+  overflow: scroll;
+}
+.view .navbar {
+  height: 35px;
+  font-size: 20px;
+  text-align: center;
+  color: #1c1d1e;
+  font-weight: 700;
+  margin-top: 15px;
+}
+.view .banner {
+  background: url("http://3.bp.blogspot.com/_Gg527Ymlqdw/TUkD4jQ_1aI/AAAAAAAAAOI/SYTE2TZilLQ/s1600/Despicable-Me-Poster.jpg");
+  height: 250px;
+  overflow: hidden;
+}
+.view .banner .title {
+  height: 20px;
+  color: #d3d1cc;
+  background-color: #1c1d1e;
+  opacity: 0.8;
+  font-size: 20px;
+  font-weight: 300;
+  position: relative;
+  top: 190px;
+  padding: 20px 10px;
+}
+.view .row {
+  border-top: 1px solid #9f9f9d;
+  clear: both;
+}
+.view .cell {
+  padding: 5px 5px;
+  float: left;
+  width: 95px;
+  text-align: center;
+  font-size: 8px;
+  font-weight: 100;
+  color: #636363;
+  /*background-color: red;*/
+}
+.view .cell .value {
+  color: #1c1c1c;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.view .cell2 {
+  border-left: 1px solid #9f9f9d;
+  border-right: 1px solid #9f9f9d;
+}
+.view .row2 .cell {
+  padding: 20px 5px;
+}
+.view .row2 .cell .value {
+  font-size: 40px;
+  font-weight: 700;
+}
+.view .row3 .cell {
+  padding: 28px 5px;
+  font-size: 40px;
+  font-weight: normal;
+  width: 149px;
+  color: #1c1c1c;
+}
+.view .row3 .cell3 {
+  border-left: 1px solid #9f9f9d;
+}
