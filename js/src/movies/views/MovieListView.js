@@ -10,7 +10,7 @@ xboom.Views.MovieList = Backbone.View.extend({
         var compile = Handlebars.compile($(this.template).html());
         _.forEach(this.movieDetails.models, function(m) {
             var data = m.toJSON();
-            console.log(data);
+            console.log('::render', data);
             this.$el.append(compile(data));
         },this);
         // var data = this.movieDetails.toJSON();
