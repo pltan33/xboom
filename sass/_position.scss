@@ -1,16 +1,19 @@
-body {
-    display: inline-block;
-    height: 100%;
-    float: left;
-    -webkit-transition: all 0.3s;
-}
-
 .pos-0 {
-    -webkit-transform: translate3d(0, 0, 0);
+    .Settings {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    .region-1 {
+        -webkit-transform: translate3d(640px, 0, 0);    
+    }
 }
 
 .pos-1 {
-    -webkit-transform: translate3d(-320px, 0, 0);
+    .Settings {
+        -webkit-transform: translate3d(-320px, 0, 0);
+    }
+    .region-1 {
+        -webkit-transform: translate3d(0px, 0, 0);
+    }
 }
 
 .pos-2 {

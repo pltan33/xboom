@@ -3,19 +3,18 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-body {
-  display: inline-block;
-  height: 100%;
-  float: left;
-  -webkit-transition: all 0.3s;
-}
-
-.pos-0 {
+.pos-0 .Settings {
   -webkit-transform: translate3d(0, 0, 0);
 }
+.pos-0 .region-1 {
+  -webkit-transform: translate3d(640px, 0, 0);
+}
 
-.pos-1 {
+.pos-1 .Settings {
   -webkit-transform: translate3d(-320px, 0, 0);
+}
+.pos-1 .region-1 {
+  -webkit-transform: translate3d(0px, 0, 0);
 }
 
 .pos-2 {
@@ -29,14 +28,28 @@ body {
 body {
   background-color: #1c1d1e;
   font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  -webkit-transition: all 0.3s;
+  height: 100%;
+}
+
+.Settings.view {
+  z-index: 999999;
+}
+
+.region {
+  clear: both;
+  height: 100%;
+  width: 100%;
 }
 
 .view {
+  position: absolute;
+  top: 0;
+  left: 0;
   background-color: #fff;
   height: 100%;
-  width: 320px;
-  overflow: scroll;
-  float: left;
+  width: 100%;
 }
 .view .navbar {
   height: 35px;

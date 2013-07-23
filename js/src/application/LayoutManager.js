@@ -6,8 +6,9 @@ xboom.LayoutManager = _.extend({
     },
     add: function(view) {
         if (!this.viewExists(view)) {
-            this._views.push(view);
-            this.$el.append(view.el);
+            var i = this._views.push(view);
+            console.log(i);
+            this.$el.find('.region-' + i).append(view.el);
             this.updatePos();
         }
     },
