@@ -35,7 +35,7 @@
             FastClick.attach(document.body);
 
             // Connect to xbmc server and sync data
-            xbmc.WebSocket.connect({path: 'ws://ptmac:9090/jsonrpc'});
+            xbmc.WebSocket.connect();
 
             // Start Application
             xboom.LayoutManager.initialize();

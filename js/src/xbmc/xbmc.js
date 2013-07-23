@@ -7,7 +7,11 @@ var xbmc = {};
 xbmc.WebSocket = _.extend({
     connect: function(options) {
         _.bindAll(this);
-        this._socket = new WebSocket(options.path);
+
+        var settings = JSON.parse(localStorage.getItem('settings'));
+        var wsPath = 'ws://' + settings.host + ':' + settings.port + '/jsonrpc';
+
+        this._socket = new WebSocket(wsPath);
         this._socket.onopen = this.onOpen;
         this._socket.onclose = this.onClose;
         this._socket.onmessage = this.onMessage;
