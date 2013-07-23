@@ -1,41 +1,17 @@
-<div class="navbar"><a href="" class="js-settings">III</a> Xboom!</div>
+<div class="navbar"><a href="" class="js-settings"><img src="img/connect.png" width="10%"></a><img src="img/logo.jpg" width="40%"></div>
 
-<div class="banner">
+<!-- <div class="banner">
     <img src="http://ptmac:8080/vfs/{{thumbnail}}" width="100%">
     <div class="title">{{title}}</div>
+</div> -->
+
+
+
+{{#each models}}
+
+<div data-movieid="{{movieid}}" class="cell movie js-movie">
+    <div class="value"><img src="http://ptmac:8080/vfs/{{thumbnail}}" width="100%"></div>
+    <div class="title">{{label}}</div>
 </div>
 
-<div class="row row1">
-    <div class="cell cell1">
-        <div class="value">Comedy</div>
-        <div class="field">Genre</div>
-    </div>
-    <div class="cell cell2">
-        <div class="value">95</div>
-        <div class="field">Minutes</div>
-    </div>
-    <div class="cell cell3">
-        <div class="value">2010</div>
-        <div class="field">Year</div>
-    </div>
-</div>
-
-<div class="row row2">
-    <div class="cell cell1">
-        <div class="value">135</div>
-        <div class="field">Votes</div>
-    </div>
-    <div class="cell cell2">
-        <div class="value">7.5</div>
-        <div class="field">Rating</div>
-    </div>
-    <div class="cell cell3">
-        <div class="value">Plot</div>
-        <div class="field">Overview</div>
-    </div>
-</div>
-
-<div class="row row3">
-    <div class="cell cell1">T</div>
-    <div class="cell cell3">></div>
-</div>
+{{/each}}
