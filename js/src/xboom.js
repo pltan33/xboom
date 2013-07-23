@@ -9,6 +9,8 @@ var xboom = {
 	Routers: {}
 };
 
+// Application
+// @include application/LayoutManager.js
 
 // Movies
 // @include movies/models/MovieModel.js

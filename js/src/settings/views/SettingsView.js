@@ -1,4 +1,9 @@
 xboom.Views.Settings = Backbone.View.extend({
+    className: 'Settings view',
+    template: xboom.Templates['js/src/settings/templates/SettingsTemplate.html'],
+    events: {
+        'click .js-cancel': 'onCancel'
+    },
     initialize: function() {
         _.bindAll(this);
 
@@ -8,6 +13,11 @@ xboom.Views.Settings = Backbone.View.extend({
         });
     },
     render: function() {
-        console.log('::render', this.model);
+        this.$el.html(this.template(this.model.toJSON()));
+        return this;
+    },
+    onCancel: function(e) {
+        e.preventDefault();
+        xboom.LayoutManager.hideSettings();
     }
 });
