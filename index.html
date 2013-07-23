@@ -34,17 +34,20 @@
 		    // Connect to xbmc server and sync data
 		    xbmc.WebSocket.connect({path: 'ws://ptmac:9090/jsonrpc'});
 
-		    // Create Views
-		    var movies = new xboom.Views.MovieList();
-		    $('body').append(movies.el);
-		    
+		    // Start Application
+		    xboom.LayoutManager.initialize();
 
-		    // var settings = new xboom.Views.Settings();
-		    // $('body').append(settings.el);
+		    // Create Views
+		    var settings = new xboom.Views.Settings();
+		    // xboom.LayoutManager.add(settings);
+		    $('body').append(settings.el);
+		    
+		    var movies = new xboom.Views.MovieList();
+		    xboom.LayoutManager.add(movies);
+		    // $('body').append(movies.el);
 		});
 	</script>
 </head>
-<body>
-
+<body class="pos-1">
 </body>
 </html>

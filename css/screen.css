@@ -4,6 +4,29 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 body {
+  display: inline-block;
+  height: 100%;
+  float: left;
+  -webkit-transition: all 0.3s;
+}
+
+.pos-0 {
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.pos-1 {
+  -webkit-transform: translate3d(-320px, 0, 0);
+}
+
+.pos-2 {
+  -webkit-transform: translate3d(-640px, 0, 0);
+}
+
+.pos-3 {
+  -webkit-transform: translate3d(-960px, 0, 0);
+}
+
+body {
   background-color: #1c1d1e;
   font-family: 'Open Sans', sans-serif;
 }
@@ -13,6 +36,7 @@ body {
   height: 100%;
   width: 320px;
   overflow: scroll;
+  float: left;
 }
 .view .navbar {
   height: 35px;
