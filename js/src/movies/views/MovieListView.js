@@ -1,6 +1,9 @@
 xboom.Views.MovieList = Backbone.View.extend({
     className: 'MovieList view',
     template: xboom.Templates['js/src/movies/templates/MovieListTemplate.html'],
+    events: {
+        'click .js-settings': 'onSettings'
+    },
     initialize: function() {
         this.collection = new xboom.Collections.Movies();
         this.listenTo(this.collection, 'reset add destroy change', this.render);
@@ -12,6 +15,10 @@ xboom.Views.MovieList = Backbone.View.extend({
         this.$el.append(this.template(m));
 
         return this;
+    },
+    onSettings: function(e) {
+        e.preventDefault();
+        xboom.LayoutManager.showSettings();
     }
 });
 

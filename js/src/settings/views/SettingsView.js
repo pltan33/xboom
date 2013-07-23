@@ -18,5 +18,6 @@ xboom.Views.Settings = Backbone.View.extend({
     },
     onCancel: function(e) {
         e.preventDefault();
+        xboom.LayoutManager.hideSettings();
     }
 });
