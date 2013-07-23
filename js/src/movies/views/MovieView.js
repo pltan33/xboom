@@ -1,4 +1,5 @@
 xboom.Views.Movie = Backbone.View.extend({
+    className: 'Movie view',
     template: xboom.Templates['js/src/movies/templates/MovieTemplate.html'],
     initialize: function() {
         // console.log(this.model.toJSON());
