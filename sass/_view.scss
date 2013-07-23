@@ -1,12 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
 
-body {
-    background-color: #1c1d1e;
+html, body {
+    // background-color: #1c1d1e;
     font-family: 'Open Sans', sans-serif;
     margin: 0;
-    height: 100%;
-
-    // overflow: hidden;
 }
 
 .Settings.view {
@@ -16,8 +13,6 @@ body {
 
 .region {
     clear: both;
-    height: 100%;
-    width: 100%;
     -webkit-transition: all 0.3s;
 }
 
@@ -26,9 +21,6 @@ body {
     top: 0;
     left: 0;
     background-color: #fff;
-    height: 100%;
-    width: 100%;
-    // overflow: hidden;
 
     .navbar {
         height: 35px;
@@ -39,76 +31,87 @@ body {
         margin-top: 15px;
     }
 
-    .banner {
-        // background: url("http://3.bp.blogspot.com/_Gg527Ymlqdw/TUkD4jQ_1aI/AAAAAAAAAOI/SYTE2TZilLQ/s1600/Despicable-Me-Poster.jpg");
-        height: 250px;
-        overflow: hidden;
+    // .banner {
+    //     // background: url("http://3.bp.blogspot.com/_Gg527Ymlqdw/TUkD4jQ_1aI/AAAAAAAAAOI/SYTE2TZilLQ/s1600/Despicable-Me-Poster.jpg");
+    //     height: 250px;
+    //     overflow: hidden;
 
-        .title {
-            height: 20px;
-            color: #d3d1cc;
-            background-color: #1c1d1e;
-            opacity: 0.8;
-            font-size: 20px;
-            font-weight: 300;
+    //     .title {
+    //         height: 20px;
+    //         color: #d3d1cc;
+    //         background-color: #1c1d1e;
+    //         opacity: 0.8;
+    //         font-size: 20px;
+    //         font-weight: 300;
 
-            position: relative;
-            top: 190px;
+    //         position: relative;
+    //         top: 190px;
 
-            padding: 0px 10px;
-        }
-    }
+    //         padding: 0px 10px;
+    //     }
+    // }
 
-    .row {
-        border-top: 1px solid #9f9f9d;
-        clear: both;
-    }
+    // .row {
+    //     border-top: 1px solid #9f9f9d;
+    //     clear: both;
+    // }
 
-    .cell {
-        padding: 5px 5px;
-        float: left;
-        width: 95px;
-        text-align: center;
-        font-size: 8px;
-        font-weight: 100;
-        color: #636363;
-        /*background-color: red;*/
+    // .cell {
+    //     padding: 5px 5px;
+    //     float: left;
+    //     width: 95px;
+    //     text-align: center;
+    //     font-size: 8px;
+    //     font-weight: 100;
+    //     color: #636363;
+    //     /*background-color: red;*/
         
-        .value {
-            color: #1c1c1c;
-            font-size: 14px;
-            margin-bottom: 4px;
-        }
-    }
+    //     .value {
+    //         color: #1c1c1c;
+    //         font-size: 14px;
+    //         margin-bottom: 4px;
+    //     }
+    // }
 
-    .cell2 {
-        border-left: 1px solid #9f9f9d;
-        border-right: 1px solid #9f9f9d;
-    }
+    // .cell2 {
+    //     border-left: 1px solid #9f9f9d;
+    //     border-right: 1px solid #9f9f9d;
+    // }
 
-    .row2 .cell {
-        padding: 20px 5px;
-        
-    }
+    // .row2 .cell {
+    //     padding: 20px 5px;
+    //     .value {
+    //         font-size: 40px;
+    //         font-weight: 700;
+    //     }
+    // }
 
-    .row3 .cell {
-        padding: 28px 5px;
-        font-size: 15px;
-        font-weight: normal;
-        width: 149px;
-        color: #1c1c1c;
+    // .row3 .cell {
+    //     padding: 28px 5px;
+    //     font-size: 40px;
+    //     font-weight: normal;
+    //     width: 149px;
+    //     color: #1c1c1c;
+    // }
 
-        .value {
-            font-size: 40px;
-            font-weight: 700;
-        }
-    }
-
-    .row3 .cell3 {
-        border-left: 1px solid #9f9f9d;
-    }
+    // .row3 .cell3 {
+    //     border-left: 1px solid #9f9f9d;
+    // }
 }
 
+.MovieList {
+    display: inline-block;
+
+    .movie {
+        float: left;
+        width: 21%;
+        padding: 5px;
+
+        .title {
+            font-size: 12px;
+        }
+    }
+}
 
 
 

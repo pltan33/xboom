@@ -1,16 +1,14 @@
-<div class="navbar"><a href="" class="js-settings"><img src="img/menu.png" width="10%"></a><img src="img/logo.jpg" width="40%"></div>
-
-<!-- <div class="banner">
-    <img src="http://ptmac:8080/vfs/{{thumbnail}}" width="100%">
-    <div class="title">{{title}}</div>
-</div> -->
-
-
+<div class="navbar">
+    <a href="" class="js-settings">
+        <img src="img/connect.png" width="10%">
+    </a>
+    <img src="img/logo.jpg" width="40%">
+</div>
 
 {{#each models}}
 
 <div data-movieid="{{movieid}}" class="cell movie js-movie">
-    <div class="value"><img src="http://ptmac:8080/vfs/{{thumbnail}}" width="100%"></div>
+    <img src="http://ptmac:8080/vfs/{{thumbnail}}" width="100%">
     <div class="title">{{label}}</div>
 </div>
 
