@@ -3,26 +3,49 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+.Settings {
+  -webkit-transform: translate3d(-320px, 0, 0);
+}
+
 .pos-0 .Settings {
   -webkit-transform: translate3d(0, 0, 0);
 }
-.pos-0 .region-1 {
+.pos-0 .region-1, .pos-0 .region-2, .pos-0 .region-3, .pos-0 .region-4 {
   -webkit-transform: translate3d(320px, 0, 0);
 }
 
-.pos-1 .Settings {
-  -webkit-transform: translate3d(-320px, 0, 0);
-}
 .pos-1 .region-1 {
   -webkit-transform: translate3d(0px, 0, 0);
 }
-
-.pos-2 {
-  -webkit-transform: translate3d(-640px, 0, 0);
+.pos-1 .region-2, .pos-1 .region-3, .pos-1 .region-4 {
+  -webkit-transform: translate3d(320px, 0, 0);
 }
 
-.pos-3 {
-  -webkit-transform: translate3d(-960px, 0, 0);
+.pos-2 .region-1 {
+  -webkit-transform: translate3d(-320px, 0, 0);
+}
+.pos-2 .region-2 {
+  -webkit-transform: translate3d(0px, 0, 0);
+}
+.pos-2 .region-3, .pos-2 .region-4 {
+  -webkit-transform: translate3d(320px, 0, 0);
+}
+
+.pos-3 .region-1, .pos-3 .region-2 {
+  -webkit-transform: translate3d(-320px, 0, 0);
+}
+.pos-3 .region-3 {
+  -webkit-transform: translate3d(0px, 0, 0);
+}
+.pos-3 .region-4 {
+  -webkit-transform: translate3d(320px, 0, 0);
+}
+
+.pos-3 .region-1, .pos-3 .region-2, .pos-3 .region-3 {
+  -webkit-transform: translate3d(-320px, 0, 0);
+}
+.pos-3 .region-4 {
+  -webkit-transform: translate3d(0px, 0, 0);
 }
 
 body {
@@ -101,16 +124,16 @@ body {
 .view .row2 .cell {
   padding: 20px 5px;
 }
-.view .row2 .cell .value {
-  font-size: 40px;
-  font-weight: 700;
-}
 .view .row3 .cell {
   padding: 28px 5px;
-  font-size: 40px;
+  font-size: 15px;
   font-weight: normal;
   width: 149px;
   color: #1c1c1c;
+}
+.view .row3 .cell .value {
+  font-size: 40px;
+  font-weight: 700;
 }
 .view .row3 .cell3 {
   border-left: 1px solid #9f9f9d;
