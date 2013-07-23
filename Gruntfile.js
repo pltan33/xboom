@@ -6,7 +6,7 @@ module.exports = function(grunt) {
         watch: {
             html: {
                 files: ['js/src/**/*.html'],
-                tasks: 'handlebars'
+                tasks: 'templates'
             },
             scss: {
                 files: ['sass/**/*.scss'],
@@ -79,6 +79,7 @@ module.exports = function(grunt) {
     // Default task
     grunt.registerTask('default', ['sass', 'compile', 'handlebars']);
     grunt.registerTask('scss', ['sass']);
+    grunt.registerTask('templates', ['handlebars', 'compile']);
     grunt.registerTask('compile', ['preprocess']);
     grunt.registerTask('dev', ['connect', 'watch']);
 
