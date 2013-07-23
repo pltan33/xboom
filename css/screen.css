@@ -3,33 +3,54 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+.Settings {
+  -webkit-transform: translate3d(-320px, 0, 0);
+}
+
 .pos-0 .Settings {
   -webkit-transform: translate3d(0, 0, 0);
 }
-.pos-0 .region-1 {
+.pos-0 .region-1, .pos-0 .region-2, .pos-0 .region-3, .pos-0 .region-4 {
   -webkit-transform: translate3d(320px, 0, 0);
 }
 
-.pos-1 .Settings {
-  -webkit-transform: translate3d(-320px, 0, 0);
-}
 .pos-1 .region-1 {
   -webkit-transform: translate3d(0px, 0, 0);
 }
-
-.pos-2 {
-  -webkit-transform: translate3d(-640px, 0, 0);
+.pos-1 .region-2, .pos-1 .region-3, .pos-1 .region-4 {
+  -webkit-transform: translate3d(320px, 0, 0);
 }
 
-.pos-3 {
-  -webkit-transform: translate3d(-960px, 0, 0);
+.pos-2 .region-1 {
+  -webkit-transform: translate3d(-320px, 0, 0);
+}
+.pos-2 .region-2 {
+  -webkit-transform: translate3d(0px, 0, 0);
+}
+.pos-2 .region-3, .pos-2 .region-4 {
+  -webkit-transform: translate3d(320px, 0, 0);
 }
 
-body {
-  background-color: #1c1d1e;
+.pos-3 .region-1, .pos-3 .region-2 {
+  -webkit-transform: translate3d(-320px, 0, 0);
+}
+.pos-3 .region-3 {
+  -webkit-transform: translate3d(0px, 0, 0);
+}
+.pos-3 .region-4 {
+  -webkit-transform: translate3d(320px, 0, 0);
+}
+
+.pos-3 .region-1, .pos-3 .region-2, .pos-3 .region-3 {
+  -webkit-transform: translate3d(-320px, 0, 0);
+}
+.pos-3 .region-4 {
+  -webkit-transform: translate3d(0px, 0, 0);
+}
+
+html, body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
-  height: 100%;
 }
 
 .Settings.view {
@@ -39,8 +60,6 @@ body {
 
 .region {
   clear: both;
-  height: 100%;
-  width: 100%;
   -webkit-transition: all 0.3s;
 }
 
@@ -49,8 +68,6 @@ body {
   top: 0;
   left: 0;
   background-color: #fff;
-  height: 100%;
-  width: 100%;
 }
 .view .navbar {
   height: 35px;
@@ -60,58 +77,15 @@ body {
   font-weight: 700;
   margin-top: 15px;
 }
-.view .banner {
-  height: 250px;
-  overflow: hidden;
+
+.MovieList {
+  display: inline-block;
 }
-.view .banner .title {
-  height: 20px;
-  color: #d3d1cc;
-  background-color: #1c1d1e;
-  opacity: 0.8;
-  font-size: 20px;
-  font-weight: 300;
-  position: relative;
-  top: 190px;
-  padding: 0px 10px;
-}
-.view .row {
-  border-top: 1px solid #9f9f9d;
-  clear: both;
-}
-.view .cell {
-  padding: 5px 5px;
+.MovieList .movie {
   float: left;
-  width: 95px;
-  text-align: center;
-  font-size: 8px;
-  font-weight: 100;
-  color: #636363;
-  /*background-color: red;*/
+  width: 21%;
+  padding: 5px;
 }
-.view .cell .value {
-  color: #1c1c1c;
-  font-size: 14px;
-  margin-bottom: 4px;
-}
-.view .cell2 {
-  border-left: 1px solid #9f9f9d;
-  border-right: 1px solid #9f9f9d;
-}
-.view .row2 .cell {
-  padding: 20px 5px;
-}
-.view .row2 .cell .value {
-  font-size: 40px;
-  font-weight: 700;
-}
-.view .row3 .cell {
-  padding: 28px 5px;
-  font-size: 40px;
-  font-weight: normal;
-  width: 149px;
-  color: #1c1c1c;
-}
-.view .row3 .cell3 {
-  border-left: 1px solid #9f9f9d;
+.MovieList .movie .title {
+  font-size: 12px;
 }
