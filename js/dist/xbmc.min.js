@@ -9,6 +9,11 @@ xbmc.WebSocket = _.extend({
         _.bindAll(this);
 
         var settings = JSON.parse(localStorage.getItem('settings'));
+
+        if (!settings) {
+            localStorage.setItem('settings', JSON.stringify({host:'ptmac', port:9090}));
+        }
+
         var wsPath = 'ws://' + settings.host + ':' + settings.port + '/jsonrpc';
 
         this._socket = new WebSocket(wsPath);
@@ -73,8 +78,12 @@ xbmc.Sync = _.extend({
     syncMovies: function(data) {
         var movies = data.result.movies;
 
+        var settings = JSON.parse(localStorage.getItem('settings'));
+        var path = 'http://' + settings.host + ':' + '8080' + '/vfs/';
+
         _.forEach(movies, function(m) {
-            m.thumbnail = encodeURIComponent(m.thumbnail);
+            console.log(path);
+            m.thumbnail = path + encodeURIComponent(m.thumbnail);
         });
 
         localStorage.setItem(data.id, JSON.stringify(movies));
