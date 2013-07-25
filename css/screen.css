@@ -45,10 +45,10 @@
   -webkit-transform: translate3d(320px, 0, 0);
 }
 
-.pos-3 .region-1, .pos-3 .region-2, .pos-3 .region-3 {
+.pos-4 .region-1, .pos-4 .region-2, .pos-4 .region-3 {
   -webkit-transform: translate3d(-320px, 0, 0);
 }
-.pos-3 .region-4 {
+.pos-4 .region-4 {
   -webkit-transform: translate3d(0px, 0, 0);
 }
 
@@ -68,7 +68,6 @@ body {
 }
 
 .view {
-  overflow: hidden;
   width: 100%;
   height: 100%;
 }
@@ -79,6 +78,7 @@ body {
   color: #1c1d1e;
   font-weight: 700;
   margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .Settings {
@@ -94,13 +94,32 @@ body {
 .MovieList .movie {
   float: left;
   width: 21%;
-  padding: 5px;
-}
-.MovieList .movie .title {
-  font-size: 12px;
+  margin: 6px;
+  box-shadow: 1px 1px 5px #888;
 }
 
-.Movie {
-  overflow: auto;
+.MovieList.view {
   -webkit-overflow-scrolling: touch;
+}
+
+.Movie .banner {
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 3px 2px 5px #888;
+}
+.Movie .row {
+  border-top: 1px solid #9f9f9d;
+  display: inline-block;
+  overflow: hidden;
+  clear: both;
+}
+.Movie .cell {
+  padding: 13px;
+  float: left;
+  text-align: center;
+  font-size: 8px;
+  font-weight: 100px;
+  color: #636363;
+  border-left: 1px solid #9f9f9d;
 }

@@ -17,6 +17,7 @@ var xboom = {
 // @include movies/collections/MoviesCollection.js
 // @include movies/views/MovieListView.js
 // @include movies/views/MovieView.js
+// @include movies/views/MovieInfoView.js
 
 
 
