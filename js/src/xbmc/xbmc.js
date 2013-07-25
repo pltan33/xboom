@@ -63,7 +63,7 @@ xbmc.Sync = _.extend({
             "jsonrpc": "2.0",
             "method": "VideoLibrary.GetMovies",
             "params": {
-                "properties": ["art", "rating", "thumbnail", "playcount", "genre", "cast", "trailer", "year", "tagline", "runtime"],
+                "properties": ["art", "plot", "rating", "thumbnail", "playcount", "genre", "cast", "trailer", "year", "tagline", "runtime"],
                 "sort": {
                     "order": "ascending",
                     "method": "label",

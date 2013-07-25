@@ -1,8 +1,13 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+// @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+@font-face {
+    font-family: 'Hattori Hanzo';
+    src: url('font/Hattori_Hanzo.otf');
+}
 
 body {
-    background-color: #1c1d1e;
-    font-family: 'Open Sans', sans-serif;
+    // background-color: #1c1d1e;
+    // font-family: 'Open Sans', sans-serif;
+    font-family: 'Hattori Hanzo', sans-serif;
     margin: 0;
 }
 
@@ -111,6 +116,79 @@ body {
         // background-color: red;
     }
 
+}
+
+.MovieInfo {
+    .banner {
+        height: 200px;
+        overflow: hidden;
+        box-shadow: 3px 2px 5px #888;
+        margin-bottom: 5px;
+    }
+
+    .row1 {
+        font-size: 25px;
+        border-bottom: 1px solid #9f9f9d;
+        margin-bottom: 5px;
+
+        .cell {
+            padding-left: 5px;
+            display: inline-block;
+            
+        }
+
+        .cell1 {
+            padding-right: 5px;
+            border-right: 2px solid #9f9f9d;
+        }
+
+        .cell2 {
+            font-size: 15px;
+        }
+    }
+
+    #plot {
+        border: 1px solid #9f9f9d;
+        border-radius: 3px;
+        box-shadow: 1px 1px 5px #2c3e50;
+        padding: 5px;
+        margin: 6px;
+        font-size: 15px;
+    }
+
+    .row3 {
+        margin: 10px 0px;
+        font-size: 25px;
+        border-bottom: 1px solid #9f9f9d;
+    }
+        
+    .genre {
+        color: #2980b9;
+        margin: 3px;
+        padding: 5px;
+        clear: both;
+        border-radius: 3px;
+        border: 1px solid #9f9f9d;
+        // box-shadow: 1px 1px 5px #2c3e50;
+        display: inline-block;
+    }
+
+    .row5 {
+    margin: 10px 0px;
+    font-size: 25px;
+    border-bottom: 1px solid #9f9f9d;
+    }
+
+    .cast {
+    color: #e74c3c;
+    margin: 3px;
+    padding: 5px;
+    clear: both;
+    border-radius: 3px;
+    border: 1px solid #9f9f9d;
+    // box-shadow: 1px 1px 5px #2c3e50;
+    display: inline-block;
+    }
 }
 
 
