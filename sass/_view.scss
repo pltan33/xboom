@@ -1,12 +1,9 @@
-// @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
 @font-face {
     font-family: 'Hattori Hanzo';
     src: url('font/Hattori_Hanzo.otf');
 }
 
 body {
-    // background-color: #1c1d1e;
-    // font-family: 'Open Sans', sans-serif;
     font-family: 'Hattori Hanzo', sans-serif;
     margin: 0;
 }
@@ -63,39 +60,15 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
-.Movie {
-    // overflow: auto;
+.Movie.view {
+    // overflow: hidden;
     // -webkit-overflow-scrolling: touch;
 
     .banner {
-        // // background: url("http://3.bp.blogspot.com/_Gg527Ymlqdw/TUkD4jQ_1aI/AAAAAAAAAOI/SYTE2TZilLQ/s1600/Despicable-Me-Poster.jpg");
         height: 400px;
         width: 100%;
         overflow: hidden;
         box-shadow: 3px 2px 5px #888;
-
-        // .title {
-        //     font-size: 25px;
-        //     color: #d3d1cc;
-        //     background-color: #1c1d1e;
-        //     opacity: 0.8;
-        //     position: absolute;
-        //     // top: 380px;
-        // }
-
-        // .title {
-        //     height: 20px;
-        //     color: #d3d1cc;
-        //     background-color: #1c1d1e;
-        //     opacity: 0.8;
-        //     font-size: 20px;
-        //     font-weight: 300;
-
-        //     position: relative;
-        //     top: 190px;
-
-        //     padding: 0px 10px;
-        // }
     }
 
     .row {
@@ -118,7 +91,12 @@ body {
 
 }
 
+.MovieInfo.view {
+    -webkit-overflow-scrolling: touch;
+}
+
 .MovieInfo {
+
     .banner {
         height: 200px;
         overflow: hidden;

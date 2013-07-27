@@ -105,19 +105,19 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-.Movie .banner {
+.Movie.view .banner {
   height: 400px;
   width: 100%;
   overflow: hidden;
   box-shadow: 3px 2px 5px #888;
 }
-.Movie .row {
+.Movie.view .row {
   border-top: 1px solid #9f9f9d;
   display: inline-block;
   overflow: hidden;
   clear: both;
 }
-.Movie .cell {
+.Movie.view .cell {
   padding: 13px;
   float: left;
   text-align: center;
@@ -125,6 +125,10 @@ body {
   font-weight: 100px;
   color: #636363;
   border-left: 1px solid #9f9f9d;
+}
+
+.MovieInfo.view {
+  -webkit-overflow-scrolling: touch;
 }
 
 .MovieInfo .banner {
