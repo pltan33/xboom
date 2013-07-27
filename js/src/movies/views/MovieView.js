@@ -2,7 +2,8 @@ xboom.Views.Movie = Backbone.View.extend({
     className: 'Movie view',
     template: xboom.Templates['js/src/movies/templates/MovieTemplate.html'],
     events: {
-        'click .js-info': 'onInfo'
+        'click .js-info': 'onInfo',
+        'click .js-back': 'onBack'
     },
     initialize: function() {
         this.render();
@@ -14,6 +15,13 @@ xboom.Views.Movie = Backbone.View.extend({
     },
     onInfo: function(e) {
         var movieInfo = new xboom.Views.MovieInfo({model: this.model});
+    },
+    onBack: function(e) {
+        e.preventDefault();
+        var _this = this;
+        xboom.LayoutManager.remove(this, function() {
+            _this.remove();
+        });
     }
 });
 

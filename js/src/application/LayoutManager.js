@@ -8,12 +8,38 @@ xboom.LayoutManager = _.extend({
         if (!this.viewExists(view)) {
             var i = this._views.push(view);
             this.$el.find('.region-' + i).append(view.el).css('display', 'block');
-            this.updatePos();
+
+            var _this = this;
+            setTimeout(function() {
+                _this.updatePos();    
+            }, 0);
+            
+
+            if (i > 1) {
+                var _this = this;
+                setTimeout(function() {
+                    _this.$el.find('.region-' + (i-1)).css('display', 'none');
+                }, 310);
+            }
         }
     },
-    remove: function(view) {
+    remove: function(view, callback) {
         this._views.pop();
-        this.updatePos();
+        var l = this._views.length;
+
+        this.$el.find('.region-' + l).css('display', 'block');
+
+        var _this = this;
+        setTimeout(function() {
+            _this.updatePos();    
+        }, 0);
+        
+        setTimeout(function() {
+            _this.$el.find('.region-' + (l+1)).css('display', 'none');
+            if (callback) {
+                callback();
+            }
+        }, 310);
     },
     viewExists: function(view) {
         var exists = _.find(this._views, function(v) {
