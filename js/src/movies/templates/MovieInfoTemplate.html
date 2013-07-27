@@ -1,0 +1,39 @@
+<div class="navbar"><img src="img/logo.jpg" width="40%"></div>
+
+<div class="banner">   
+    <!-- <div class="title">{{label}}</div> -->
+    <img src="{{thumbnail}}" width="100%">   
+</div>
+
+<div class="row row1">
+	<div class="cell cell1">
+        <div class="title">{{label}}</div>
+    </div>
+    <div class="cell cell2">
+        <div class="rating">Ratings: 7</div>
+    </div>
+</div>
+
+<div class="row row2" id="plot">{{plot}}</div>
+
+<div class ="row row3">Genre</div>
+
+<div class ="row row4">
+
+{{#each genre}}
+	<div class="cell genre">
+		{{this}}
+	</div>
+
+{{/each}}
+
+<div class ="row row5">Cast</div>
+
+{{#each cast}}
+	<div class="cell cast">
+		{{this.name}}
+	</div>
+
+{{/each}}
+
+</div>
