@@ -3,7 +3,8 @@ xboom.Views.Movie = Backbone.View.extend({
     template: xboom.Templates['js/src/movies/templates/MovieTemplate.html'],
     events: {
         'click .js-info': 'onInfo',
-        'click .js-back': 'onBack'
+        'click .js-back': 'onBack',
+        'click .js-play': 'onPlay'
     },
     initialize: function() {
         this.render();
@@ -22,6 +23,9 @@ xboom.Views.Movie = Backbone.View.extend({
         xboom.LayoutManager.remove(this, function() {
             _this.remove();
         });
+    },
+    onPlay: function() {
+        xbmc.Controls.play();
     }
 });
 

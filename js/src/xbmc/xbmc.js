@@ -33,7 +33,7 @@ xbmc.WebSocket = _.extend({
     onMessage: function(message) {
         var data = JSON.parse(message.data);
 
-        this.trigger('socket:' + data.id, data);
+        this.trigger('socket:' + data.method, data);
     },
     send: function(message) {
         this._socket.send(message);
@@ -87,6 +87,12 @@ xbmc.Sync = _.extend({
         });
 
         localStorage.setItem(data.id, JSON.stringify(movies));
+    }
+}, Backbone.Events);
+
+xbmc.Controls = _.extend({
+    play: function() {
+        xbmc.WebSocket.send('{"jsonrpc": "2.0", "method": "Player.PlayPause", "params": { "playerid": 0 }, "id": 1}');
     }
 }, Backbone.Events);
 
