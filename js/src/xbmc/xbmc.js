@@ -63,7 +63,7 @@ xbmc.Sync = _.extend({
             "jsonrpc": "2.0",
             "method": "VideoLibrary.GetMovies",
             "params": {
-                "properties": ["art", "plot", "rating", "thumbnail", "playcount", "genre", "cast", "trailer", "year", "tagline", "runtime"],
+                "properties": ["art", "plot", "rating", "thumbnail", "playcount", "genre", "cast", "trailer", "year", "tagline", "runtime", "file"],
                 "sort": {
                     "order": "ascending",
                     "method": "label",
@@ -82,7 +82,6 @@ xbmc.Sync = _.extend({
         var path = 'http://' + settings.host + ':' + '8080' + '/vfs/';
 
         _.forEach(movies, function(m) {
-            console.log(path);
             m.thumbnail = path + encodeURIComponent(m.thumbnail);
         });
 
@@ -91,8 +90,23 @@ xbmc.Sync = _.extend({
 }, Backbone.Events);
 
 xbmc.Controls = _.extend({
+    initialize: function() {
+        _.bindAll(this);
+        this.listenTo(xbmc.WebSocket, 'all', this.onMessage);
+        xbmc.WebSocket.send('{"jsonrpc": "2.0", "method": "Player.GetActivePlayers", "id": 1}');
+    },
+    onMessage: function(e, data) {
+        if (data && data.result) {
+            this._players = data.result;
+        }
+    },
     play: function() {
-        xbmc.WebSocket.send('{"jsonrpc": "2.0", "method": "Player.PlayPause", "params": { "playerid": 0 }, "id": 1}');
+        xbmc.WebSocket.send('{"jsonrpc": "2.0", "method": "Player.PlayPause", "params": { "playerid": 1 }, "id": 1}');
+    },
+    open: function(m) {
+        var json = { "jsonrpc": "2.0", "method": "Player.Open", "params": { "item": { "file": "" } }, "id": 1 };
+        json.params.item.file = m.file;
+        xbmc.WebSocket.send(JSON.stringify(json));
     }
 }, Backbone.Events);
 
@@ -100,4 +114,11 @@ xbmc.Controls = _.extend({
 xbmc.Sync.initialize();
 xbmc.WebSocket.on('socket:open', function() {
     xbmc.Sync.sync();
+    xbmc.Controls.initialize();
 });
+
+
+
+
+
+

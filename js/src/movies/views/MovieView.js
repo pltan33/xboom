@@ -25,7 +25,7 @@ xboom.Views.Movie = Backbone.View.extend({
         });
     },
     onPlay: function() {
-        xbmc.Controls.play();
+        xbmc.Controls.open(this.model.toJSON());
     }
 });
 
