@@ -31,6 +31,8 @@
 
     <!-- Launch App!! -->
     <script type="text/javascript">
+        var app;
+
         $(document).ready(function() {
             FastClick.attach(document.body);
 
@@ -38,7 +40,7 @@
             xbmc.WebSocket.connect();
 
             // Start Application
-            xboom.LayoutManager.initialize();
+            app = new xboom.LayoutManager({el: $('body')});
 
             // Create Views
             var settings = new xboom.Views.Settings();
@@ -46,12 +48,19 @@
             $('body').prepend(settings.el);
             
             var movies = new xboom.Views.MovieList();
-            xboom.LayoutManager.add(movies);
+            app.add(movies);
             // $('body').append(movies.el);
         });
     </script>
 </head>
 <body class="pos-1">
+    <div class="navbar">
+        <a href="" class="js-settings">
+            <img src="img/menu.png" height="30px">
+        </a>
+        <img src="img/logo.jpg" height="30px">
+    </div>
+
     <div class="region region-1" style="display: block;"></div>
     <div class="region region-2" style="display: none;"></div>
     <div class="region region-3" style="display: none;"></div>

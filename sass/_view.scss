@@ -8,31 +8,43 @@ body {
     margin: 0;
 }
 
-.region {
-    -webkit-transition: all 0.3s;
+.navbar {
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    height: 35px;
+    font-size: 20px;
+    text-align: center;
+    color: #1c1d1e;
+    font-weight: 700;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.region {
+    -webkit-transition: all 0.3s;
+    position: absolute;
+    top: 65px;
+    left: 0;
     background-color: #fff;
-    height: 100%;
+    height: 89%;
+    
+    -webkit-transform: translate3d(0,0,0);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .view {
     width: 100%;
     height: 100%;
-
-    .navbar {
-        height: 35px;
-        font-size: 20px;
-        text-align: center;
-        color: #1c1d1e;
-        font-weight: 700;
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
+    text-align: center;
 }
 
 .Settings {
+    position: absolute;
+    top: 65px;
+    left: 0;
     z-index: 999999;
     -webkit-transition: all 0.3s;
     background-color: #1c1d1e;
