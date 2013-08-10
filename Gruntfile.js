@@ -67,6 +67,17 @@ module.exports = function(grunt) {
                     "js/dist/templates.min.js": ["js/src/**/*.html"]
                 }
             }
+        },
+
+        'images-convert': {
+            jpgresize: {
+                imageDirectory: 'images',
+                files: 'images/*.jpg',
+                destination: 'tmp/',
+                options: {
+                    resize: '300x300'
+                }
+            }   
         }
     });
 
@@ -75,6 +86,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-preprocess');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-images');
 
     // Default task
     grunt.registerTask('default', ['sass', 'compile', 'handlebars']);
