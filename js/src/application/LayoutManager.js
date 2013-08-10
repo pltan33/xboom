@@ -1,9 +1,9 @@
 xboom.LayoutManager = Backbone.View.extend({
     events: {
-        'click .navbar .js-settings': 'showSettings'
+        'click .navbar .js-settings': 'showSettings',
+        'click .navbar .js-back': 'remove'
     },
     initialize: function() {
-        // this.$el = $('body');
         this._views = [];
         this._pos = 1;
     },
@@ -26,9 +26,14 @@ xboom.LayoutManager = Backbone.View.extend({
             }
         }
     },
-    remove: function(view, callback) {
-        this._views.pop();
+    remove: function(e) {
+        e.preventDefault();
+
         var l = this._views.length;
+        var _currentView = this._views[l-1];
+        this._views.pop();
+
+        l--;
 
         this.$el.find('.region-' + l).css('display', 'block');
 
@@ -39,9 +44,7 @@ xboom.LayoutManager = Backbone.View.extend({
         
         setTimeout(function() {
             _this.$el.find('.region-' + (l+1)).css('display', 'none');
-            if (callback) {
-                callback();
-            }
+            _currentView.remove();
         }, 310);
     },
     viewExists: function(view) {
