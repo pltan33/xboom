@@ -1,6 +1,9 @@
-xboom.LayoutManager = _.extend({
+xboom.LayoutManager = Backbone.View.extend({
+    events: {
+        'click .navbar .js-settings': 'showSettings'
+    },
     initialize: function() {
-        this.$el = $('body');
+        // this.$el = $('body');
         this._views = [];
         this._pos = 1;
     },
@@ -55,10 +58,11 @@ xboom.LayoutManager = _.extend({
             this._pos = pos;
         }
     },
-    showSettings: function() {
+    showSettings: function(e) {
+        e.preventDefault();
         this.$el.removeClass('pos-' + this._pos).addClass('pos-0');
     },
     hideSettings: function() {
         this.$el.addClass('pos-' + this._pos).removeClass('pos-0');
     }
-}, Backbone.Events);
+});
