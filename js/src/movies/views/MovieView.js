@@ -11,7 +11,7 @@ xboom.Views.Movie = Backbone.View.extend({
     },
     render: function() {
         this.$el.html(this.template(this.model.toJSON()));
-        xboom.LayoutManager.add(this);
+        app.add(this);
         return this;
     },
     onInfo: function(e) {
@@ -20,7 +20,7 @@ xboom.Views.Movie = Backbone.View.extend({
     onBack: function(e) {
         e.preventDefault();
         var _this = this;
-        xboom.LayoutManager.remove(this, function() {
+        app.remove(this, function() {
             _this.remove();
         });
     },
