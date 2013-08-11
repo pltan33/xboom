@@ -8,8 +8,8 @@
 {{#each models}}
 
 <div data-movieid="{{movieid}}" class="cell movie js-movie">
-    <img src="{{thumbnail}}" width="100%">
-<!--     <div class="title">{{label}}</div> -->
+    <img class="lazy" data-original="{{thumbnail}}" src="/img/loader.gif" width="70px" height="105px">
+    <!-- <div class="title">{{label}}</div> -->
 </div>
 
 {{/each}}

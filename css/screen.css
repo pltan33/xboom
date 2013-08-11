@@ -82,7 +82,6 @@ body {
   left: 0;
   background-color: #fff;
   height: 89%;
-  -webkit-transform: translate3d(0, 0, 0);
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -110,7 +109,6 @@ body {
   float: left;
   width: 21%;
   margin: 6px;
-  box-shadow: 1px 1px 5px #888;
 }
 
 .MovieList.view {

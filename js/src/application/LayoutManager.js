@@ -18,12 +18,16 @@ xboom.LayoutManager = Backbone.View.extend({
             }, 0);
             
 
-            if (i > 1) {
-                var _this = this;
-                setTimeout(function() {
-                    _this.$el.find('.region-' + (i-1)).css('display', 'none');
-                }, 310);
-            }
+            // if (i > 1) {
+            //     var _this = this;
+            //     setTimeout(function() {
+            //         _this.$el.find('.region-' + (i-1)).css('display', 'none');
+            //     }, 310);
+            // }
+
+            view.$("img.lazy").lazyload({
+                effect : "fadeIn"
+            });
         }
     },
     remove: function(e) {
