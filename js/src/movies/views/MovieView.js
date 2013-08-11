@@ -3,6 +3,7 @@ xboom.Views.Movie = Backbone.View.extend({
     template: xboom.Templates['js/src/movies/templates/MovieTemplate.html'],
     events: {
         'click .js-info': 'onInfo',
+        'click .js-remote': 'onRemote',
         'click .js-play': 'onPlay'
     },
     initialize: function() {
@@ -18,6 +19,10 @@ xboom.Views.Movie = Backbone.View.extend({
     },
     onPlay: function() {
         xbmc.Controls.open(this.model.toJSON());
+    },
+    onRemote: function() {
+        var remoteControl = new xboom.Views.RemoteControl({});
     }
+
 });
 
