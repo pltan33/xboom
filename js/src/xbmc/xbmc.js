@@ -107,6 +107,9 @@ xbmc.Controls = _.extend({
         var json = { "jsonrpc": "2.0", "method": "Player.Open", "params": { "item": { "file": "" } }, "id": 1 };
         json.params.item.file = m.file;
         xbmc.WebSocket.send(JSON.stringify(json));
+    },
+    down: function() {
+        xbmc.WebSocket.send('{ "jsonrpc": "2.0", "method": "Input.Down", "id": 1 }');
     }
 }, Backbone.Events);
 
