@@ -1,6 +1,6 @@
 xboom.Views.RemoteControl = Backbone.View.extend({
     className: 'RemoteControl view',
-    template: xboom.Templates['js/src/movies/templates/RemoteControlTemplate.html'],
+    template: xboom.Templates['js/src/remoteControl/templates/RemoteControlTemplate.html'],
     events: {
         'click .js-right': 'onRight',
         'click .js-up': 'onUp',
@@ -16,15 +16,15 @@ xboom.Views.RemoteControl = Backbone.View.extend({
         return this;
     },
     onRight: function() {
-        console.log('you clicked right');
+        xbmc.Controls.navigate('Right');
     },
     onUp: function() {
-        console.log('you clicked up');
+        xbmc.Controls.navigate('Up');
     },
     onLeft: function() {
-        console.log('you clicked left');
+        xbmc.Controls.navigate('Left');
     },
     onDown: function() {
-        xbmc.Controls.down();
+        xbmc.Controls.navigate('Down');
     }
 });
