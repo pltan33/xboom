@@ -108,8 +108,8 @@ xbmc.Controls = _.extend({
         json.params.item.file = m.file;
         xbmc.WebSocket.send(JSON.stringify(json));
     },
-    down: function() {
-        xbmc.WebSocket.send('{ "jsonrpc": "2.0", "method": "Input.Down", "id": 1 }');
+    navigate: function(direction) {
+        xbmc.WebSocket.send('{ "jsonrpc": "2.0", "method": "Input.' + direction + '", "id": 1 }');
     }
 }, Backbone.Events);
 
