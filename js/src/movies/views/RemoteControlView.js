@@ -25,6 +25,6 @@ xboom.Views.RemoteControl = Backbone.View.extend({
         console.log('you clicked left');
     },
     onDown: function() {
-        console.log('you clicked down');
+        xbmc.Controls.down();
     }
 });
